@@ -128,7 +128,7 @@ def symlink_with_overwrite(src, dst):
     """
     try:
         os.symlink(src, dst)
-    except OSError, e:
+    except OSError as e:
         if e.errno != errno.EEXIST:
             raise
         # symlink already exists, kill it and relink. We could theoretically
